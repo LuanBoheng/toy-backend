@@ -1,0 +1,86 @@
+1.for sign up:
+request:
+	http://115.146.92.114:8888/signup/<user_name>/<password>/<email>/<addr>/<phone_num>
+response:
+	{'message':'xxx'}
+
+
+
+2.for update user profile:
+request:
+	http://115.146.92.114:8888/updateuser/<token>/<user_name>/<password>/<email>/<addr>/<phone_num>
+response:
+	{'message':'xxx'}
+
+
+3.for update order ack:
+request:
+	http://115.146.92.114:8888/updateack/<order_id>/<status>/<time_pickup>/<message_shipper>
+response:
+	{'message':'xxx'}
+
+
+4.for login:
+request:
+	http://115.146.92.114:8888/login/<email>/<password>
+response:
+	{'message':'xxx','token':'xxx'}
+
+
+
+5.for create order:
+request:
+	http://115.146.92.114:8888/createorder/<token>/<num_box>/<addr_dest>/<addr_pick>/<shipment_id>/<message>
+response:
+	{'message':'xxx'}
+	
+
+
+6.for view user:
+request:
+	http://115.146.92.114:8888/viewuser/<token>
+response:
+	{'length':'10', '0':'xxx', ... ,'9':'xxx'}
+
+for each user
+		{
+                'user':user_name, 
+                'password':password, 
+                'email':email,
+                'address':addr,
+                'phone':phone_num
+                }
+
+
+7.for view order:
+request:
+	http://115.146.92.114:8888/vieworder/<token>
+response:
+	{'length':'10', '0':'xxx', ... ,'9':'xxx'}
+
+each order information:
+	'request':{
+                 'sender':email,
+                 'num_box':num_box,
+                 'addr_dest':addr_Jakarta,
+                 'addr_pick':addr_melb,
+                 'shipment_id':shipment_id,
+                 'message_user':message
+                 }
+ 
+         'ack':  {
+                 'status':'To be Approved',
+                 'time_pickup':'',
+                 'cost':num_box,
+                 'num_hbl':'',
+                 'message_shipper':''
+                 }
+
+
+8.get ship information:
+request:
+	http://115.146.92.114:8888/ship
+response:
+	{"0": {"ship_id": "1", "depart_date": "xxxx.xx.x1", "estimate_arrive_date": "xxxx.xx.x1"}, 
+	 "1": {"ship_id": "2", "depart_date": "xxxx.xx.x2", "estimate_arrive_date": "xxxx.xx.x2"}, 
+	 "length": "2"}

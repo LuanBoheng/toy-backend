@@ -1,0 +1,66 @@
+=> Waiting for confirmation of MongoDB service startup
+2018-09-27T10:35:40.041+0000 [initandlisten] MongoDB starting : pid=6 port=27017 dbpath=/data/db master=1 64-bit host=67a6840c0d6f
+2018-09-27T10:35:40.041+0000 [initandlisten] db version v2.6.11
+2018-09-27T10:35:40.041+0000 [initandlisten] git version: d00c1735675c457f75a12d530bee85421f0c5548
+2018-09-27T10:35:40.041+0000 [initandlisten] build info: Linux build4.ny.cbi.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+2018-09-27T10:35:40.041+0000 [initandlisten] allocator: tcmalloc
+2018-09-27T10:35:40.041+0000 [initandlisten] options: { master: true, net: { http: { RESTInterfaceEnabled: true, enabled: true } }, security: { authorization: "enabled" } }
+2018-09-27T10:35:40.043+0000 [initandlisten] journal dir=/data/db/journal
+2018-09-27T10:35:40.043+0000 [initandlisten] recover : no journal files present, no recovery needed
+2018-09-27T10:35:40.160+0000 [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+2018-09-27T10:35:40.215+0000 [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+2018-09-27T10:35:40.215+0000 [FileAllocator] creating directory /data/db/_tmp
+2018-09-27T10:35:40.218+0000 [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.001 secs
+2018-09-27T10:35:40.218+0000 [initandlisten] build index on: local.startup_log properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "local.startup_log" }
+2018-09-27T10:35:40.218+0000 [initandlisten] 	 added index to empty collection
+2018-09-27T10:35:40.219+0000 [initandlisten] ******
+2018-09-27T10:35:40.219+0000 [initandlisten] creating replication oplog of size: 990MB...
+2018-09-27T10:35:40.219+0000 [FileAllocator] allocating new datafile /data/db/local.1, filling with zeroes...
+2018-09-27T10:35:40.222+0000 [FileAllocator] done allocating datafile /data/db/local.1, size: 1024MB,  took 0.003 secs
+2018-09-27T10:35:40.223+0000 [initandlisten] ******
+2018-09-27T10:35:40.223+0000 [initandlisten] waiting for connections on port 27017
+2018-09-27T10:35:40.223+0000 [websvr] admin web console waiting for connections on port 28017
+2018-09-27T10:35:45.079+0000 [initandlisten] connection accepted from 127.0.0.1:44930 #1 (1 connection now open)
+2018-09-27T10:35:45.080+0000 [conn1] note: no users configured in admin.system.users, allowing localhost access
+2018-09-27T10:35:45.082+0000 [conn1] end connection 127.0.0.1:44930 (0 connections now open)
+=> Creating an admin user with a random password in MongoDB
+MongoDB shell version: 2.6.11
+connecting to: admin
+2018-09-27T10:35:45.137+0000 [initandlisten] connection accepted from 127.0.0.1:44932 #2 (1 connection now open)
+switched to db admin
+2018-09-27T10:35:45.142+0000 [conn2] allocating new ns file /data/db/admin.ns, filling with zeroes...
+2018-09-27T10:35:45.199+0000 [FileAllocator] allocating new datafile /data/db/admin.0, filling with zeroes...
+2018-09-27T10:35:45.201+0000 [FileAllocator] done allocating datafile /data/db/admin.0, size: 64MB,  took 0.001 secs
+2018-09-27T10:35:45.202+0000 [conn2] build index on: admin.system.version properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "admin.system.version" }
+2018-09-27T10:35:45.202+0000 [conn2] 	 added index to empty collection
+2018-09-27T10:35:45.202+0000 [conn2] build index on: admin.system.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "admin.system.users" }
+2018-09-27T10:35:45.203+0000 [conn2] 	 added index to empty collection
+2018-09-27T10:35:45.203+0000 [conn2] build index on: admin.system.users properties: { v: 1, unique: true, key: { user: 1, db: 1 }, name: "user_1_db_1", ns: "admin.system.users" }
+2018-09-27T10:35:45.203+0000 [conn2] 	 added index to empty collection
+Successfully added user: {
+	"user" : "admin",
+	"roles" : [
+		{
+			"role" : "dbOwner",
+			"db" : "admin"
+		}
+	]
+}
+bye
+=> Done!
+2018-09-27T10:35:45.210+0000 [conn2] end connection 127.0.0.1:44932 (0 connections now open)
+========================================================================
+You can now connect to this MongoDB server using:
+
+    mongo admin -u admin -p Gh1QyOay3xC1 --host <host> --port <port>
+
+Please remember to change the above password as soon as possible!
+========================================================================
+$cmd
+2018-09-27T10:36:23.454+0000 [initandlisten] connection accepted from 172.17.0.1:50156 #3 (1 connection now open)
+2018-09-27T10:36:23.633+0000 [conn3]  authenticate db: admin { authenticate: 1, nonce: "xxx", user: "admin", key: "xxx" }
+2018-09-27T10:36:23.634+0000 [conn3] Failed to authenticate admin@admin with mechanism MONGODB-CR: AuthenticationFailed key mismatch
+2018-09-27T10:36:23.646+0000 [conn3] end connection 172.17.0.1:50156 (0 connections now open)
+2018-09-27T10:36:40.164+0000 [clientcursormon] mem (MB) res:46 virt:2567
+2018-09-27T10:36:40.164+0000 [clientcursormon]  mapped (incl journal view):2368
+2018-09-27T10:36:40.164+0000 [clientcursormon]  connections:0
